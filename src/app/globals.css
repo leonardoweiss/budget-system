@@ -10,6 +10,11 @@ body {
   color: #fff;
 }
 
+h1{
+  font-size: 2rem;
+  margin: 1rem;
+}
+
 fieldset {
   padding: 1rem;
   margin: 1.2rem;
@@ -20,7 +25,40 @@ fieldset {
     padding: 0.75rem;
   }
 
+  .input-service{
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    width: 55%;
+  }
+
+  .price-service{
+    width: 10%;
+    text-align: end;
+  }
+
   input {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ccc;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    margin: 0 0 0 0.5rem;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+
+    &:focus {
+      border-color: #0070f3;
+      outline: none;
+    }
+  }
+
+  span{
+    font-size: 0.80rem;
+  }
+
+  select{
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -47,4 +85,36 @@ fieldset {
       background-color: #005bb5;
     }
   }
+
+  .button-service{
+    display: flex;
+    margin-top: 1rem;
+
+    .add{
+      width: 95%;
+      font-weight: bold;
+    }
+  }
+
+  
+}
+
+#services{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+
+  fieldset{
+    width: 48%;
+    height: 48vh;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+hr{
+  margin: 1rem;
+  border: none;
 }
