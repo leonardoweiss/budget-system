@@ -2,6 +2,17 @@ import { NextResponse } from "next/server";
 
 const clients = [
     {
+        id: 0,
+        name: "Consumidor não cadastrado",
+        adress: "",
+        cep: "",
+        city: "",
+        uf: "",
+        cnpj: "",
+        ie: "",
+        contact: "",
+    },
+    {
         id: 1,
         name: "Buzin Transportes LTDA",
         adress: "Rua das Flores, 123",

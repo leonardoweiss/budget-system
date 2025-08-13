@@ -15,6 +15,16 @@ h1{
   margin: 1rem;
 }
 
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
+}
+::-webkit-scrollbar {
+    width: 0px;
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(0, 0, 0);
+}
+
 fieldset {
   padding: 1rem;
   margin: 1.2rem;
@@ -26,16 +36,51 @@ fieldset {
   }
 
   .input-service{
-    margin-bottom: 1rem;
+    margin: 0.5rem 0.5rem 2rem 0.5rem;
+    background-color: #414141;
+    padding: 0.5rem ;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .description {
+      width: 45%;
+    }
+
+    .price-service{
+      width: 10%;
+      text-align: end;
+    }
+
+    select{
+      width: 10%;
+    }
   }
 
-  .description {
-    width: 55%;
-  }
+  .services-ready{
+    border-radius: 10px;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    background-color: #414141;
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
 
-  .price-service{
-    width: 10%;
-    text-align: end;
+    div{
+      margin: 0 1rem;
+    }
+    div:nth-child(1){
+      width: 100%;
+    }
+    div:nth-child(2){
+      width: 15%;
+      text-align: end;  
+    }
+    div:nth-child(3){
+      width: 10%;
+      text-align: end;
+    }
   }
 
   input {
@@ -85,18 +130,6 @@ fieldset {
       background-color: #005bb5;
     }
   }
-
-  .button-service{
-    display: flex;
-    margin-top: 1rem;
-
-    .add{
-      width: 95%;
-      font-weight: bold;
-    }
-  }
-
-  
 }
 
 #services{
@@ -106,15 +139,36 @@ fieldset {
   justify-content: center;
   align-items: center;
 
-  fieldset{
-    width: 48%;
+  form{
+    width: 100%;
     height: 48vh;
     justify-content: center;
     align-items: center;
+
+    fieldset{
+      height: 90%;
+      overflow: auto;
+    }
   }
 }
 
 hr{
   margin: 1rem;
   border: none;
+}
+
+.edit{
+  background-color: #00a063;
+
+  &:hover {
+    background-color: #007f50;
+  }
+}
+
+.delete{
+  background-color: #f00;
+
+  &:hover {
+    background-color: rgb(139, 0, 0);
+  }
 }

@@ -1,9 +1,11 @@
 export default function Products() {
   return (
     <>
-      <fieldset>
-        <legend>Produtos</legend>
-    </fieldset>
+      <form>
+        <fieldset>
+          <legend>Produtos</legend>
+        </fieldset>
+      </form>
     </>
   );
 }
