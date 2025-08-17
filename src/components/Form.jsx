@@ -4,7 +4,7 @@ import { useState } from "react";
 import Services from "./Services";
 import Products from "./Products";
 
-export default function Form({ clients, employees }) {
+export default function Form({ clients, employees, products }) {
 
   const [index, setIndex] = useState(0)
   const [client, setClient] = useState(clients.clients || []);
@@ -40,7 +40,7 @@ export default function Form({ clients, employees }) {
       </fieldset>
       <section id="services">
         <Services employees={employees} />
-        <Products />
+        <Products products={products}/>
       </section>
     </>
   )

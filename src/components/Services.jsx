@@ -28,7 +28,7 @@ export default function Services({ employees }) {
                 {/* Campos para adicionar novo serviço */}
                 <div className="input-service">
                     <input type="text" className="description" autoComplete="off" name="description" placeholder="Descrição" />
-                    <input type="text" className="price-service" autoComplete="off" name="price-service" placeholder="00" /><span>,00</span>
+                    <input type="text" className="price" autoComplete="off" name="price-service" placeholder="00" /><span>,00</span>
                     <select name="mechanic1">
                         <option value="">Mec 1</option>
                         {employee.map((employee, index) => (
@@ -45,14 +45,32 @@ export default function Services({ employees }) {
                         <button type="submit">Adicionar</button>
                     </div>
                 </div>
+                <div className="total">
+                    <span>Total De Serviços: R$ {services.reduce((acc, el) => acc + parseFloat(el.price), 0)},00</span>
+                </div>
                 {/* Lista dos serviços já adicionados */}
                 {services.map((el, i) => (
                     <div key={1 + i} className="services-ready">
+                        <div></div>
                         <div>{el.desc}</div>
                         <div> R$ {el.price},00 </div>
                         <div>{el.mechanic1} {el.mechanic2 && `& ${el.mechanic2}`}</div>
-                        <button type="button" className="edit">Editar</button>
-                        <button type="button" className="delete">Excluir</button>
+                        <div>
+                            <button type="button" className="edit" onClick={() => {
+                                const updatedServices = [...services];
+                                updatedServices[i] = {
+                                    desc: prompt("Editar descrição:", el.desc) || el.desc,
+                                    price: prompt("Editar preço:", el.price) || el.price,
+                                    mechanic1: prompt("Editar mecânico 1:", el.mechanic1) || el.mechanic1,
+                                    mechanic2: prompt("Editar mecânico 2:", el.mechanic2) || el.mechanic2
+                                };
+                                setServices(updatedServices);
+                            }}>Editar</button>
+                            <button type="button" className="delete" onClick={() => {
+                                const updatedServices = services.filter((_, index) => index !== i);
+                                setServices(updatedServices);
+                            }}>Excluir</button>
+                        </div>
                     </div>
                 ))}
             </fieldset>
